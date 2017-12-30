@@ -1,6 +1,6 @@
 package pl.applantic.cqrs;
 
-interface Service {
+interface CommandService {
     void command();
     ReadModel query();
 }
