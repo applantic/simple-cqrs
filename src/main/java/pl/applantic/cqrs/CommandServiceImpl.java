@@ -1,10 +1,15 @@
 package pl.applantic.cqrs;
 
 class CommandServiceImpl implements CommandService {
-    WriteModel writeModel = new WriteModel();
+
+    private Database database;
+
+    public CommandServiceImpl(Database database) {
+        this.database = database;
+    }
 
     @Override
     public void command() {
-        writeModel.setValue(100);
+        database.getWriteModel().setValue(100);
     }
 }

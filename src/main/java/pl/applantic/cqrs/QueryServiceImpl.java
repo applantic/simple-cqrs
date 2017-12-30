@@ -1,9 +1,11 @@
 package pl.applantic.cqrs;
 
-public class QueryServiceImpl implements QueryService{
+class QueryServiceImpl implements QueryService{
+    private Database database;
 
     @Override
     public ReadModel query() {
-        return new ReadModel(new WriteModel());
+        WriteModel writeModel = database.getWriteModel();
+        return new ReadModel().mapFrom(writeModel);
     }
 }
