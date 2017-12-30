@@ -1,6 +1,6 @@
 package pl.applantic.cqrs;
 
-class ServiceImpl implements CommandService, QueryService {
+class CommandServiceImpl implements CommandService, QueryService {
     WriteModel writeModel = new WriteModel();
 
     @Override
